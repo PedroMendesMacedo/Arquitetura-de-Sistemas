@@ -1,13 +1,14 @@
 version: '3.8'
-services:
-  # O "Correio" do seu sistema (Comunicação Assíncrona)
-  rabbit-mq:
-    image: rabbitmq:3-management
-    ports:
-      - "5672:5672"
-      - "15672:15672"
 
-  # Seu primeiro serviço
+services:
   servico-pedidos:
-    image: python:3.9-slim
-    command: python -c "print('Servico de Pedidos Rodando...'); import time; time.sleep(1000)"
+    build: ./services/pedidos
+    ports:
+      - "5000:5000"
+    depends_on:
+      - servico-estoque
+
+  servico-estoque:
+    build: ./services/estoque
+    ports:
+      - "5001:5001"
