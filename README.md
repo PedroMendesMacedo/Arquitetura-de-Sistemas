@@ -1,4 +1,4 @@
-# Cafeteria Distribuída - Middleware Project
+# Cafeteria Distribuída - Projeto Arquitetura de Sistemas
 
 Nossa proposta de projeto consiste em uma aplicação de cafeteria é divida em microsserviços. Utilizando docker, Python e REST ou RPC(ainda vamos decidir)
 
